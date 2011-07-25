@@ -21,8 +21,14 @@ describe "Calculator" do
   # Test-Driving Bonus: once the above tests pass, 
   # write tests and code for the following:
   
-  it "multiplies two numbers"
+  it "multiplies two numbers" do
+    multiply(10,4).should == 40
+    multiply(8,4).should == 32
+  end
 
-  it "raises one number to the power of another number"
+  it "raises one number to the power of another number" do
+    exponent(2,3).should == 8
+    exponent(10,2).should == 100
+  end
   
 end
