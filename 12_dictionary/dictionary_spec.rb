@@ -51,7 +51,7 @@ describe Dictionary do
     @d.add('great' => 'remarkable')
     @d.find('fi').should == {'fish' => 'aquatic animal', 'fiend' => 'wicked person'}
   end
-  
+
   it 'lists keywords alphabetically' do
     @d.add('zebra' => 'African land animal with stripes')
     @d.add('fish' => 'aquatic animal')
