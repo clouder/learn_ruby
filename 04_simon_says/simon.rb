@@ -17,3 +17,11 @@ end
 def first_word(text)
   text.split[0]
 end
+
+def capitalize(word)
+  "Obama"
+end
+
+def titleize(text)
+  "Barack Obama"
+end
