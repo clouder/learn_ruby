@@ -8,34 +8,26 @@ class RPNCalculator < Array
   end
 
   def plus
-    begin
+    rescue_or_calculate_with do
       @value = self.push(self.pop + self.pop).last
-    rescue NoMethodError
-      raise 'calculator is empty'
     end
   end
 
   def minus
-    begin
+    rescue_or_calculate_with do
       @value = self.push(self.delete_at(-2) - self.pop).last
-    rescue NoMethodError
-      raise 'calculator is empty'
     end
   end
 
   def divide
-    begin
+    rescue_or_calculate_with do
       @value = self.push(self.delete_at(-2) / self.pop).last
-    rescue NoMethodError
-      raise 'calculator is empty'
     end
   end
 
   def times
-    begin
+    rescue_or_calculate_with do
       @value = self.push(self.pop * self.pop).last
-    rescue NoMethodError
-      raise 'calculator is empty'
     end
   end
 
@@ -45,6 +37,16 @@ class RPNCalculator < Array
 
   def evaluate(string)
     -7
+  end
+
+  private
+
+  def rescue_or_calculate_with(&block)
+    begin
+      yield
+    rescue NoMethodError
+      raise 'calculator is empty'
+    end
   end
 
 end
